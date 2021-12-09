@@ -1,0 +1,64 @@
+//////////////////////////////////CSS GRID V2
+////////////////////////GRID
+.grid{
+  &-2 {
+    grid-template-columns: repeat(2, 1fr );
+  }
+  &-3 {
+    grid-template-columns: repeat(3, 1fr );
+  }
+  &-4 {
+    grid-template-columns: repeat(4, 1fr );
+  }
+  &-md{
+    @include breakpoint(md) {
+      &-2 {
+        grid-template-columns: repeat(2, 1fr );
+      }
+      &-3 {
+        grid-template-columns: repeat(3, 1fr );
+      }
+      &-4 {
+        grid-template-columns: repeat(4, 1fr );
+      }
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      &-2 {
+        grid-template-columns: repeat(2, 1fr );
+      }
+      &-3 {
+        grid-template-columns: repeat(3, 1fr );
+      }
+      &-4 {
+        grid-template-columns: repeat(4, 1fr );
+      }
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      &-2 {
+        grid-template-columns: repeat(2, 1fr );
+      }
+      &-3 {
+        grid-template-columns: repeat(3, 1fr );
+      }
+      &-4 {
+        grid-template-columns: repeat(4, 1fr );
+      }
+    }
+  }
+}
+
+.gap{
+  &-30{
+    gap: 30px;
+  }
+  &-20{
+    gap: 20px;
+  }
+  &-10{
+    gap: 10px;
+  }
+}

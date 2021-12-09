@@ -1,0 +1,93 @@
+/////////////////////////////////////////Button
+
+///////////////////////////Main
+.btn{
+  padding: em(8) em(32);
+  transition: all 0.3s ease-in-out;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  font-size: inherit;
+  cursor: pointer;
+  &.is-full{
+    width: 100%;
+  }
+  &:not(:last-child):not(.is-full){
+    @include margin('-right', 2)
+  }
+  &.is-primary{
+    background-color: $primary;
+    border: 2px solid $primary;
+    &:hover{
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+  &.is-secondary{
+    background-color: $secondary;
+    border: 2px solid $secondary;
+    &:hover{
+      background-color: $primary;
+      color: black;
+    }
+  }
+}
+///////////////////////////Overline
+.btn{
+  &.outline-primary{
+    background-color: transparent;
+    border: 2px solid $primary;
+    &.bg-black{
+      background-color: black;
+    }
+    &.bg-dark{
+      background-color: $dark-1;
+    }
+    &:hover{
+      background-color: $primary;
+      .txt{
+        color: black;
+      }
+
+    }
+  }
+}
+
+
+///////////////////////////Custom
+.btn{
+  &-dismiss{
+    user-select: none;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    pointer-events: auto;
+    display: inline-block;
+    font-size: 0;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    outline: none;
+    &:hover{
+      background-color: hsla(0,0%,4%,.3);
+    }
+    &:before, &:after{
+      background-color: #fff;
+      content: "";
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transform-origin: center center;
+    }
+    &:before{
+      height: 2px;
+      width: 50%;
+    }
+    &:after{
+      height: 50%;
+      width: 2px;
+    }
+  }
+}

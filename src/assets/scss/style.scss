@@ -1,0 +1,15 @@
+///////////////////////////////////////////////Базовые стили
+//////////////////////////////Неизменные стили
+//@import "constant/ps_normalize"; //уже загружается
+
+//////////////////////////////Стили проекта
+@import "project/mymixins";
+@import "constant/ps_main";
+@import "project/base";
+@import "project/dark_mode";
+//////////////////////////////Модули
+@import "animations/animations";
+//////////////////////////////Страницы
+
+//////////////////////////////DEBUG
+//@import "../scss/constant/_DELETEME.scss";

@@ -1,0 +1,95 @@
+@use "sass:math";
+@import "colors";
+///////////Брейкпоинты
+$screen-xs:                   0 !default;
+$screen-sm:                   479.98px !default;
+$screen-md:                   767.98px !default;
+$screen-lg:                   991.98px !default;
+$screen-xl:                   1199.98px !default;
+$screen-xxl:                  1400px !default;
+$screen-uhd:                  1600px !default;
+
+$container-xs:                320px !default;
+$container-sm:                540px !default;
+$container-md:                720px !default;
+$container-lg:                960px !default;
+$container-xl:                1140px !default;
+$container-xxl:               1320px !default;
+/////////////////////Основные
+/////////////////////Переменные
+
+////////////////////////////////////////FONTS
+//Fonts---------------------------------------------------------------
+
+//CСтарая функция
+//@function em($pixels, $context: 16) {
+//  @return #{$pixels/$context}em;
+//}
+
+//noinspection CssInvalidFunction
+@function em($px, $font-size: 16) {
+  @return math.div($px, $font-size) + em;
+}
+//noinspection CssInvalidFunction
+@function rem($px, $font-size: 16) {
+  @return math.div($px, $font-size) + rem;
+}
+//////Брейкпоинты-------------------------------------
+//-    @include breakpoint(sm) //sm, md, lg, xl, xxl
+////////
+@mixin breakpoint($minwidth){
+  @if $minwidth == sm{
+    @media (min-width: $screen-sm) {
+      @content;
+    }
+  }
+  @else if $minwidth == xs{
+    @media (min-width: $screen-xs) {
+      @content;
+    }
+  }
+  @else if $minwidth == md{
+    @media (min-width: $screen-md) {
+      @content;
+    }
+  }
+  @else if $minwidth == lg{
+    @media (min-width: $screen-lg) {
+      @content;
+    }
+  }
+  @else if $minwidth == xl{
+    @media (min-width: $screen-xl) {
+      @content;
+    }
+  }
+  @else if $minwidth == xxl{
+    @media (min-width: $screen-xxl) {
+      @content;
+    }
+  }
+  @else if $minwidth == uhd{
+    @media (min-width: $screen-uhd) {
+      @content;
+    }
+  }
+  @else {
+    @error "Unknown width #{$minwidth}.";
+  }
+}
+
+
+///НЕ ТРОГАТЬ..///НЕ ТРОГАТЬ..///НЕ ТРОГАТЬ..///НЕ ТРОГАТЬ..///НЕ ТРОГАТЬ..///НЕ ТРОГАТЬ..
+/////////////////////Системное
+// Converting fonts-------------------------------------
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+    url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+//

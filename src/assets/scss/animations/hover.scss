@@ -1,0 +1,116 @@
+$duration: 0.3s;
+
+
+/* Underline Reveal */
+@mixin underline-reveal {
+  @include hacks();
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    //transform: translateY(3px);
+    transition-property: left, right;
+    transition-duration: $duration;
+    transition-timing-function: ease-out;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      //transform: translateY(0);
+      left: 00%;
+      right: 00%;
+    }
+  }
+}
+
+.hover-underline-center {
+  @include underline-reveal;
+  &:before {
+    background-color: $secondary;
+    height: 3px;
+  }
+}
+.hover-up{
+  transition: all 0.3s ease-in-out;
+  &:hover{
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-4px);
+    box-shadow: 6px 10px 4px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.hover-back-fill {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out !important;
+  &:hover {
+    color: black;
+    transform: translateY(-4px);
+    box-shadow: 6px 10px 4px 2px rgba(0, 0, 0, 0.25);
+    .txt-secondary{
+      color: black;
+    }
+    &:before {
+      width: 100%;
+      left: 0;
+    }
+  }
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -4em;
+      display: inline-block;
+      content: "";
+      width: 2em;
+      height: 100%;
+      background: $secondary;
+      transition: all 0.3s ease-in-out;
+      z-index: -1;
+    }
+
+}
+
+.hover-back {
+  transition: all 0.2s ease-in-out !important;
+  background-color: rgba(24, 54, 84, 0);
+  &:hover {
+    background-color: rgb(18, 36, 54);
+    transform-origin: center;
+  }
+}
+
+.hover-bg-image{
+  transition: all .5s;;
+  &:hover{
+    transform: scale(1.2);
+  }
+}
+
+.hover-ltr-fill{
+  position: relative;
+  isolation: isolate;
+  &:before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  &:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: rgb(18, 36, 54);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+}

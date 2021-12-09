@@ -1,0 +1,55 @@
+body {
+  &::before {
+    content: "xs_ DONT FORGET TO DELETE";
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    font-size: 10px;
+    color: black;
+  }
+  @media (max-width: 320px) {
+    &::before {
+      content: "ERROR_ DONT FORGET TO DELETE";
+    }
+  }
+  @media (min-width: $screen-xs) {
+    &::before {
+      content: "xs_ DONT FORGET TO DELETE";
+    }
+  }
+  @media (min-width: $screen-sm) {
+    &::before {
+      content: "sm_ DONT FORGET TO DELETE";
+    }
+  }
+  @media (min-width: $screen-md) {
+    &::before {
+      content: "md_ DONT FORGET TO DELETE";
+    }
+  }
+  @media (min-width: $screen-lg) {
+    &::before {
+      content: "lg_ DONT FORGET TO DELETE";
+    }
+  }
+  @media (min-width: $screen-xl) {
+    &::before {
+      content: "xl_ DONT FORGET TO DELETE";
+    }
+  }
+    @media (min-width: $screen-xxl) {
+        &::before {
+            content: "xxl_ DONT FORGET TO DELETE";
+        }
+    }
+    @media (min-width: $screen-uhd) {
+        &::before {
+            content: "uhd_ DONT FORGET TO DELETE";
+        }
+    }
+}
+///////////////DEBUG
+//* {
+//  outline: 1px solid red;
+//}
+/////////

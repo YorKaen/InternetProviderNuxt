@@ -1,0 +1,102 @@
+////////////////////////////////////////////////////////////////////////Margin and padding
+//@include margin('-top', 2)
+//@include padding('-top', 2)
+////////////////////////////////////////////////////////////////////////Margin
+$margins: 1,2,3,4,5;
+$paddings: 1,2,3,4,5;
+
+.m{
+  &t{
+    &-a{
+      margin-top: auto;
+    }
+  }
+  &b{
+    &-a{
+      margin-bottom: auto;
+    }
+  }
+  &l{
+    &-a{
+      margin-left: auto;
+    }
+  }
+  &r{
+    &-a{
+      margin-right: auto;
+    }
+  }
+  &{
+    &-a{
+      margin: auto;
+    }
+  }
+  @each $margin in $margins{
+    &t{
+      &-#{$margin}{
+        @include margin('-top', $margin)
+      }
+    }
+    &b{
+      &-#{$margin}{
+        @include margin('-bottom', $margin)
+      }
+    }
+    &l{
+      &-#{$margin}{
+        @include margin('-left', $margin)
+      }
+    }
+    &r{
+      &-#{$margin}{
+        @include margin('-right', $margin)
+      }
+    }
+    &-#{$margin}{
+      @include margin('', $margin)
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////Padding
+.p{
+  @each $padding in $paddings{
+    &-#{$padding}{
+      @include padding('', $padding)
+    }
+    &t{
+      &-#{$padding}{
+        @include padding('-top', $padding)
+      }
+    }
+    &b{
+      &-#{$padding}{
+        @include padding('-bottom', $padding)
+      }
+    }
+    &l{
+      &-#{$padding}{
+        @include padding('-left', $padding)
+      }
+    }
+    &r{
+      &-#{$padding}{
+        @include padding('-right', $padding)
+      }
+    }
+    &x{
+      &-#{$padding}{
+        @include padding('-right', $padding);
+        @include padding('-left', $padding);
+      }
+    }
+    &y{
+      &-#{$padding}{
+        @include padding('-top', $padding);
+        @include padding('-bottom', $padding);
+      }
+    }
+  }
+}
+
+

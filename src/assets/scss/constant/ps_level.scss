@@ -1,0 +1,43 @@
+.level{
+  align-items: center;
+  justify-content: space-between;
+  @include breakpoint(md){
+    display: flex;
+  }
+  &-left, &-right{
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    &.is-fill{
+      flex-grow: 1;
+    }
+  }
+  &-left{
+    align-items: center;
+    justify-content: flex-start;
+    @include breakpoint(md){
+      display: flex;
+    }
+  }
+  &-right{
+    align-items: center;
+    justify-content: flex-end;
+    @include breakpoint(md){
+      display: flex;
+    }
+  }
+  &-item{
+    @include margin("-bottom", 3);
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    text-align: center;
+    &.is-start{
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}

@@ -1,0 +1,172 @@
+//-Стили появления окна
+.burger-enter-active,
+.burger-leave-active {
+  transition: transform 0.2s ease;
+}
+.burger-enter-from,
+.burger-leave-to {
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+}
+//-Стили наведения на кнопку
+//-Cтили меню
+.burger{
+  &.menu-fullscreen{
+    display: flex;
+    flex-direction: column;
+    &.active{
+      top: -72px;
+      position: fixed;
+      width: 100%;
+      height: 101vh;
+      left: 0;
+      z-index: 99;
+      .burger-nav{
+        padding-top: 64px;
+      }
+    }
+    .burger-menu{
+      width: 100%;
+      height: 100%;
+    }
+    .burger-button-wrapper.active{
+      top: -10px;
+      z-index: 1000;
+      position: fixed;
+      width: fit-content;
+      height: fit-content;
+      right: 0;
+      .burger-button{
+        left: unset !important;
+        right: 20px;
+      }
+    }
+  }
+}
+//-Cтили кнопки
+.burger{
+  &.burger-ladder{
+    .burger-button{
+      .push-me{
+        transition: all 0.3s ease-in-out;
+        &-01 {
+          width: 100%;
+        }
+        &-02 {
+          width: 75%;
+          margin-left: auto;
+        }
+        &-03 {
+          width: 50%;
+          margin-left: auto;
+        }
+      }
+      &:hover{
+        .push-me{
+          width: 100%;
+        }
+      }
+    }
+    .burger-button-wrapper.active{
+      .burger-button{
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        z-index: 1000;
+        left: 10px;
+        top: 50px;
+        transform: unset;
+      }
+      .push-me{
+        transition: all 0.3s ease-in-out, width 0.0001s linear;
+        position: relative;
+        &-01 {
+          transform: rotate(45deg);
+          background-color: black;
+          position: absolute;
+          width: 30px;
+          top: 5px;
+        }
+        &-02 {
+          position: absolute;
+          top: 5px;
+          background-color: black;
+          display: none;
+        }
+        &-03 {
+          position: absolute;
+          width: 30px;
+          top: 5px;
+          transform: rotate(-45deg);
+          background-color: black;
+          margin-bottom: auto;
+        }
+      }
+    }
+  }
+}
+//-Стили props
+.bg-black {
+  background-color: black;
+}
+.bg-primary {
+  background-color: $primary;
+}
+
+//-Основные стили
+.burger {
+  //position: relative;
+  width: 100%;
+  height: 100%;
+  &-menu {
+    position: absolute;
+    z-index: 99;
+    height: auto;
+    right: 0;
+    top: 70px;
+    width: 250px;
+  }
+  &-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+  }
+  &-button-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    min-width: 40px;
+    min-height: 40px;
+
+  }
+  &-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 20px;
+    width: 40px;
+    .push-me {
+      height: 3px;
+      width: 100%;
+      &-01 {
+        margin-bottom: auto;
+      }
+      &-02 {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      &-03 {
+        margin-top: auto;
+      }
+    }
+  }
+}

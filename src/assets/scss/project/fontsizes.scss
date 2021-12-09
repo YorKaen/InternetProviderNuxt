@@ -1,0 +1,118 @@
+body {
+  font-size: 12px;
+  @include breakpoint(sm) {
+    font-size: 14px;
+  }
+  @include breakpoint(md) {
+    font-size: 16px;
+  }
+}
+
+.title {
+  @include breakpoint(sm) {
+  }
+  @include breakpoint(md) {
+  }
+  @include breakpoint(lg) {
+  }
+  @include breakpoint(xl) {
+  }
+}
+
+.txt {
+  // Технически это одно и то же, но используйте и то, и другое
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  // Вместо word-break: break-all используйте этот нестандартный:
+  word-break: break-word;
+  // Добавляет дефис там, где слово ломается, если поддерживается
+  hyphens: auto;
+}
+
+*::placeholder {
+  font-size: 15px;
+}
+
+///////////////SCSS Mixins
+@mixin txt-h1{
+  font-weight: normal;
+  font-size: em(84);
+  line-height: 120%;
+}
+@mixin txt-h2{
+  font-weight: normal;
+  font-size: em(48);
+  line-height: 120%;
+}
+@mixin txt-h3{
+  font-weight: normal;
+  font-size: em(28);
+  line-height: 120%;
+}
+@mixin txt-h4{
+  font-weight: normal;
+  font-size: em(24);
+  line-height: 130%;
+}
+@mixin txt-h5{
+  font-weight: normal;
+  font-size: em(18);
+  line-height: 137.5%;
+}
+@mixin txt-h6{
+  font-size: em(12);
+  line-height: 110%;
+}
+/////////////////////////////////////////
+h1{
+  @include txt-h3;
+
+  @include breakpoint(md){
+    @include txt-h2;
+  }
+  @include breakpoint(xxl){
+    @include txt-h1;
+  }
+}
+
+h2{
+  @include txt-h4;
+  @include breakpoint(md){
+    @include txt-h3;
+  }
+  @include breakpoint(lg){
+    @include txt-h2;
+  }
+}
+
+h3{
+  font-weight: normal;
+  @include txt-h4;
+  @include breakpoint(md){
+    @include txt-h3;
+  }
+}
+
+h4{
+  @include txt-h5;
+  @include breakpoint(md){
+    @include txt-h4;
+  }
+}
+
+
+.txt-1{
+  line-height: 150%;
+  font-size: em(16);
+  @include breakpoint(md){
+    font-size: em(20);
+  }
+}
+
+.txt-h{
+  @include txt-h6;
+  letter-spacing: 2.26px;
+  text-transform: uppercase;
+}
+
+

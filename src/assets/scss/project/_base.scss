@@ -1,0 +1,129 @@
+$defaultFont: "Merriweather", sans-serif;
+//$titleFont: "Lobster", sans-serif;
+
+
+body {
+  font-family: $defaultFont;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 0;
+  transition: ease-in-out 0.1s;
+  overflow-x: hidden;
+  color: black;
+  background-color: $body-bg;
+}
+
+@import "fontsizes";
+@import "components";
+@import "buttons";
+
+h1{
+  //font-family: $titleFont;
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.txt {
+  &-white {
+    color: $white;
+  }
+  &-black{
+    color: black;
+  }
+  &-primary {
+    color: $primary;
+  }
+  &-secondary {
+    color: $secondary;
+  }
+  &-body {
+    color: $body-bg;
+  }
+  &-gray {
+    color: rgb(197, 197, 197);
+  }
+  &-blue {
+    color: blue;
+  }
+  &-danger{
+    color: $danger;
+  }
+  &-img-after {
+    &:after {
+      content: "";
+      //background: no-repeat url(../img/plus.svg);
+      background-size: contain;
+      min-width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+}
+
+.fw {
+  &-r {
+    font-weight: 400;
+  }
+  &-m,
+  &-medium {
+    font-weight: 500;
+  }
+  &-smb,
+  &-semibold {
+    font-weight: 600;
+  }
+  &-b,
+  &-bold {
+    font-weight: 700;
+  }
+  &-exb,
+  &-extrabold {
+    font-weight: 800;
+  }
+  &-bi {
+    font-weight: 700;
+    font-style: italic;
+  }
+  &-i {
+    font-style: italic;
+  }
+}
+
+.bg {
+  &-primary {
+    background-color: $primary;
+  }
+  &-secondary {
+    background-color: $secondary;
+  }
+  &-white {
+    background-color: white;
+  }
+  &-gray{
+    background-color: $gray-1;
+  }
+  &-body {
+    background-color: $body-bg;
+  }
+  &-black {
+    background-color: $black-1;
+  }
+  &-dark {
+    background-color: $dark-1;
+  }
+  &-danger {
+    background-color: #dc3545;
+  }
+}

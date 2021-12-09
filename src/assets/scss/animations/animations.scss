@@ -1,0 +1,16 @@
+@import "keyframes";
+@import "hover";
+@import "transitions";
+@import "on-enter";
+
+/////////////////////////////////////////////////
+.anim-appear{
+  opacity: 0;
+  animation: appear 2s linear both;
+}
+.anim-ping {
+  opacity: 0;
+  animation: appear 1s ease-in-out alternate infinite;
+}
+//////////////////////////////////////////////////////
+

@@ -1,0 +1,33 @@
+/////////////////////////////////Containers
+.container {
+  @include container;
+  &.is-full{
+    max-width: 100%;
+    &-md{
+      max-width: 100%;
+      @media (min-width: $screen-md) {
+        @include container;
+      }
+    }
+    &-xl{
+      max-width: 100%;
+      @include breakpoint(xl){
+        @include container;
+      }
+    }
+  }
+}
+
+section.section{
+  //padding-bottom: 5em;
+  &:first-child{
+    padding-top: 0;
+  }
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+
+.block:not(:last-child){
+  @include margin('-bottom', 3, 0.5em)
+}

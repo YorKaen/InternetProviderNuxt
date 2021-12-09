@@ -1,0 +1,51 @@
+//https://github.com/IanLunn/Hover/tree/master/scss
+@mixin hardwareAccel() {
+  // Improve performance on mobile/tablet devices
+  // Perspective reduces blurryness of text in Chrome
+  transform: perspective(1px) translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+  // Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin forceBlockLevel() {
+  // Transforms need to be block-level to work
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin hacks() {
+  @include forceBlockLevel();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+}
+
+@keyframes marquee {
+  0%   { transform: translate(100%, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+@keyframes marqueeY {
+  0%   { transform: translateY(-150%); opacity: 0}
+  50%   { transform: translateY(-50%);  opacity: 1}
+  100% { transform: translateY(0%); }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fill {
+  from {
+    stroke-dashoffset: 2902.7;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

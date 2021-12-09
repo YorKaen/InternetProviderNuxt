@@ -1,0 +1,125 @@
+/////////////////////////////////////////////////////////////////////////HIDE
+.d-none,.d-hide{
+  display: none;
+  &-sm{
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+  &-md{
+    display: none;
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+  &-lg{
+    display: none;
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+  &-xl{
+    display: none;
+    @include breakpoint(xl) {
+      display: none;
+    }
+  }
+  &-xxl{
+    display: none;
+    @include breakpoint(xxl) {
+      display: none;
+    }
+  }
+}
+
+.show-at {
+  &-sm {
+    display: none;
+    @include breakpoint(sm) {
+      display: flex;
+    }
+  }
+  &-md {
+    display: none;
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+  &-lg {
+    display: none;
+    @include breakpoint(lg) {
+      display: flex;
+    }
+  }
+  &-xl {
+    display: none;
+    @include breakpoint(xl) {
+      display: flex;
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////Flex
+.d-flex{
+  display: flex;
+  flex-direction: row;
+  &-sm{
+    @include breakpoint(sm) {
+      display: flex;
+    }
+  }
+  &-md{
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      display: flex;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      display: flex;
+    }
+  }
+  &-xxl{
+    @include breakpoint(xxl) {
+      display: flex;
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////Grid
+.d-grid {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  display: flex; //backup
+  flex-direction: column;
+  display: grid;
+  &-auto{
+    display: grid;
+    grid-template-rows: auto;
+  }
+  &-md{
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-rows: auto;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-rows: auto;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      display: grid;
+      grid-template-rows: auto;
+    }
+  }
+}
+
