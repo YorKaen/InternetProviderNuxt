@@ -1,20 +1,16 @@
 <template lang="pug">
 .index.mt-5
   section-basic(:src-name="'top-section'")
-    //- слайдер по левой стороне, на правой блоки с интернетом, тв, видеонаблюдением
     template(v-slot:content)
       .top-section__wrapper.wrapper.d-flex.flex-col.d-grid-lg.mt-5
         .slider.slider-container
           Swiper6
         .ad-blocks.ad-blocks-container
           ad-block(v-for="item in adblockArray" :adblock="item" :key="item.id")
-
   section-basic(:src-name="'form-to-connect'")
-    //- выбрать опции -> дальше - выбрать адрес - дальше - открытие заявки в новом окне
     template(v-slot:content)
       FormConnect
   section-basic(:src-name="'form-to-payment'")
-    //- выбрать номер договора и сумму
     template(v-slot:content)
       .form-payment
   section-basic(:src-name="'tariffs'")

@@ -20,7 +20,7 @@ export default {
     ],
     // ссылки в каждой странице по дефолту
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '../favicon.ico' },
       //{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap' }
 
     ],

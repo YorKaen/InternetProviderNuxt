@@ -1,5 +1,6 @@
 <template lang="pug">
 .particles-js
+  client-only
     particles-bg(:bg="true" num=10 type="square")
 
 </template>
