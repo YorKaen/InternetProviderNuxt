@@ -1,6 +1,6 @@
 <template lang="pug">
   #app.app
-    d-e-b-u-g
+    //d-e-b-u-g
     nav.nav.fixed.bg-black.txt-white
       .level.container.pb-2.pt-2.bg-black
         .level-left
