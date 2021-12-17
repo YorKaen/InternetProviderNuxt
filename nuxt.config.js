@@ -5,7 +5,7 @@ export default {
   target: 'static',
   ssr: true,
   router: {
-    base: '/app/'
+    base: '/InternetProviderNuxt/'
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   // Можно указывать в обьекте head в компоненте <script>export default {head: {meta: [{}]}
