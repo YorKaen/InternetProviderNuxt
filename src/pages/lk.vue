@@ -2,8 +2,6 @@
 .index.mt-5
   .container.mt-5
     h3.txt.txt-white Здравствуйте, {{ this.$store.state.global.userId }} !
-    button.btn(@click="sortArray(arrayToSort)")
-      .txt Sort
 
 </template>
 
@@ -15,7 +13,7 @@ export default {
   components: {  },
   props: {},
   data: () => ({
-      arrayToSort:[{ value: '616 314' }, { value: '323 314' }, { value: '173 314' }, { value: '723 994' }, { value: '923 314' }, { value: '252 322' }]
+      //arrayToSort:[{ value: '616 314' }, { value: '323 314' }, { value: '173 314' }, { value: '723 994' }, { value: '923 314' }, { value: '252 322' }]
   }),
   created() {
     //console.log(this.$route.query)
@@ -25,11 +23,11 @@ export default {
   },
   computed: {},
   mounted() {
-    console.log('this')
-    console.log(this.arrayToSort)
-    //this.storeItems(this.arrayToSort)
-    console.log('local')
-    console.log(this.$store.state.local.arrayStore)
+    //console.log('this')
+    //console.log(this.arrayToSort)
+    ////this.storeItems(this.arrayToSort)
+    //console.log('local')
+    //console.log(this.$store.state.local.arrayStore)
     //this.sortArray(this.arrayToSort)
 
   },
